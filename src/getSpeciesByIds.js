@@ -7,3 +7,4 @@ function getSpeciesByIds(...ids) {
 }
 console.log(getSpeciesByIds());
 module.exports = getSpeciesByIds;
+
