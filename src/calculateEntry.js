@@ -1,15 +1,6 @@
 const data = require('../data/zoo_data');
 const { prices } = require('../data/zoo_data');
 
-const entrants = [
-  { name: 'Lara Carvalho', age: 5 },
-  { name: 'Frederico Moreira', age: 5 },
-  { name: 'Pedro Henrique Carvalho', age: 5 },
-  { name: 'Maria Costa', age: 18 },
-  { name: 'Núbia Souza', age: 18 },
-  { name: 'Carlos Nogueira', age: 50 },
-];
-
 function countEntrants(entrants) {
   if (typeof entrants === 'undefined' || Object.keys(entrants).length === 0) return 0;
   const child = entrants.filter((children) => children.age < 18).length;
@@ -17,7 +8,6 @@ function countEntrants(entrants) {
   const senior = entrants.filter((seniores) => seniores.age >= 50).length;
   return { child, adult, senior };
 }
-console.log(countEntrants(entrants));
 
 function calculateEntry(entrants) {
   if (typeof entrants === 'undefined' || Object.keys(entrants).length === 0) return 0;
@@ -27,5 +17,4 @@ function calculateEntry(entrants) {
   const seniorValue = calculate.senior * prices.senior;
   return childValue + adultValue + seniorValue;
 }
-console.log(calculateEntry(entrants));
 module.exports = { calculateEntry, countEntrants };
