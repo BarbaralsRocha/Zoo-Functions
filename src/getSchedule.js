@@ -1,4 +1,3 @@
-const { animal } = require('faker');
 const data = require('../data/zoo_data');
 const { species, hours } = require('../data/zoo_data');
 
@@ -41,14 +40,14 @@ const oneDay = (scheduleTarget) => {
   return day;
 };
 
-const oneAnimal = (scheduleTarget) => species.find((animals) => animals.name === scheduleTarget).availability;
-// const dayOfWeek = [noArguments()];
-// console.log(dayOfWeek)
-// console.log(daysOfweek.filter((dia) => dayOfWeek[dia].exhibition).some((animal) => animal === scheduleTarget));
+const oneAnimal = (scheduleTarget) => {
+  const verificaAnimal = species.find((animals) => animals.name === scheduleTarget);
+  return verificaAnimal.availability;
+};
 
 const arrayAnimals = [];
-species.forEach((animal) => {
-  arrayAnimals.push(animal.name);
+species.forEach((animals) => {
+  arrayAnimals.push(animals.name);
 });
 
 function getSchedule(scheduleTarget) {
