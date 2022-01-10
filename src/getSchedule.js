@@ -1,11 +1,6 @@
 const data = require('../data/zoo_data');
 const { species, hours } = require('../data/zoo_data');
 
-/*       'Tuesday': {
-        'officeHour': 'Open from 8am until 6pm',
-        'exhibition': [ 'lions', 'tigers', 'bears', 'penguins', 'elephants', 'giraffes' ],
-      }, */
-
 const daysOfweek = Object.keys(hours);
 const map = species.map((animals) => animals.availability);
 
