@@ -21,9 +21,7 @@ const withoutArguments = () => employees.map((employee) => {
 
 const findByName = (searching) => {
   const allEmployees = withoutArguments();
-  const employee = allEmployees.find((employe) => {
-    if (employe.fullName.includes(searching.name)) return employe;
-  });
+  const employee = allEmployees.find((employe) => employe.fullName.includes(searching.name));
   if (employee === undefined) {
     throw new Error('Informações inválidas');
   }
@@ -44,4 +42,5 @@ function getEmployeesCoverage(searching) {
   if (searching.name) return findByName(searching);
   if (searching.id) return findById(searching);
 }
+console.log(getEmployeesCoverage({ name: 'Sharonda' }));
 module.exports = getEmployeesCoverage;
